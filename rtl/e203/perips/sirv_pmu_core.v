@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_pmu_core.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_pmu.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_pmu.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_pmu_core，该模块实现当前文件中的一部分核心功能。
 module sirv_pmu_core(
   input   clock,
   input   reset,
@@ -445,6 +457,7 @@ module sirv_pmu_core(
   assign T_585 = io_regs_sleepProgram_7_write_valid & unlocked;
   assign GEN_34 = T_585 ? io_regs_sleepProgram_7_write_bits : {{23'd0}, sleepProgram_7};
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       run <= 1'h1;
@@ -472,6 +485,7 @@ module sirv_pmu_core(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       awake <= 1'h1;
@@ -487,6 +501,7 @@ module sirv_pmu_core(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       unlocked <= 1'h0;
@@ -496,6 +511,7 @@ module sirv_pmu_core(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wantSleep <= 1'h0;
@@ -515,6 +531,7 @@ module sirv_pmu_core(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       pc <= 3'h0;
@@ -522,6 +539,7 @@ module sirv_pmu_core(
       pc <= GEN_8[2:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupCause <= 2'h0;
@@ -545,6 +563,7 @@ module sirv_pmu_core(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       T_396 <= 4'b0;
@@ -553,6 +572,7 @@ module sirv_pmu_core(
       T_396 <= io_regs_ie_write_bits;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_0 <= 9'h1f0;
@@ -560,6 +580,7 @@ module sirv_pmu_core(
       wakeupProgram_0 <= GEN_19[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_1 <= 9'hf8;
@@ -567,6 +588,7 @@ module sirv_pmu_core(
       wakeupProgram_1 <= GEN_20[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_2 <= 9'h30;
@@ -574,6 +596,7 @@ module sirv_pmu_core(
       wakeupProgram_2 <= GEN_21[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_3 <= 9'h30;
@@ -581,6 +604,7 @@ module sirv_pmu_core(
       wakeupProgram_3 <= GEN_22[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_4 <= 9'h30;
@@ -588,6 +612,7 @@ module sirv_pmu_core(
       wakeupProgram_4 <= GEN_23[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_5 <= 9'h30;
@@ -595,6 +620,7 @@ module sirv_pmu_core(
       wakeupProgram_5 <= GEN_24[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_6 <= 9'h30;
@@ -602,6 +628,7 @@ module sirv_pmu_core(
       wakeupProgram_6 <= GEN_25[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       wakeupProgram_7 <= 9'h30;
@@ -609,6 +636,7 @@ module sirv_pmu_core(
       wakeupProgram_7 <= GEN_26[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_0 <= 9'hf0;
@@ -616,6 +644,7 @@ module sirv_pmu_core(
       sleepProgram_0 <= GEN_27[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_1 <= 9'h1f0;
@@ -623,6 +652,7 @@ module sirv_pmu_core(
       sleepProgram_1 <= GEN_28[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_2 <= 9'h1d0;
@@ -630,6 +660,7 @@ module sirv_pmu_core(
       sleepProgram_2 <= GEN_29[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_3 <= 9'h1c0;
@@ -637,6 +668,7 @@ module sirv_pmu_core(
       sleepProgram_3 <= GEN_30[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_4 <= 9'h1c0;
@@ -644,6 +676,7 @@ module sirv_pmu_core(
       sleepProgram_4 <= GEN_31[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_5 <= 9'h1c0;
@@ -651,6 +684,7 @@ module sirv_pmu_core(
       sleepProgram_5 <= GEN_32[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_6 <= 9'h1c0;
@@ -658,6 +692,7 @@ module sirv_pmu_core(
       sleepProgram_6 <= GEN_33[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sleepProgram_7 <= 9'h1c0;
@@ -665,6 +700,7 @@ module sirv_pmu_core(
       sleepProgram_7 <= GEN_34[8:0];
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       count <= 16'h0;

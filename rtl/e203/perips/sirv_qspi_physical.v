@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_qspi_physical.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_qspi_media.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_qspi_media.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_qspi_physical，该模块实现当前文件中的一部分核心功能。
 module sirv_qspi_physical(
   input   clock,
   input   reset,
@@ -457,6 +469,7 @@ module sirv_qspi_physical(
   assign GEN_63 = T_251 ? GEN_50 : ctrl_sck_pol;
   assign GEN_64 = T_251 ? GEN_51 : ctrl_sck_pha;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
   if (reset) begin
     ctrl_sck_div <= 12'b0;
@@ -641,6 +654,7 @@ module sirv_qspi_physical(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       cref <= 1'h1;
@@ -653,6 +667,7 @@ module sirv_qspi_physical(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       txd <= 4'h0;
@@ -662,6 +677,7 @@ module sirv_qspi_physical(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       done <= 1'h1;
@@ -683,6 +699,7 @@ module sirv_qspi_physical(
 
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       T_119 <= 1'h0;
@@ -690,6 +707,7 @@ module sirv_qspi_physical(
       T_119 <= sample;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       T_120 <= 1'h0;
@@ -697,6 +715,7 @@ module sirv_qspi_physical(
       T_120 <= T_119;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       sample_d <= 1'h0;
@@ -704,6 +723,7 @@ module sirv_qspi_physical(
       sample_d <= T_120;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       T_122 <= 1'h0;
@@ -711,6 +731,7 @@ module sirv_qspi_physical(
       T_122 <= last;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       T_123 <= 1'h0;
@@ -718,6 +739,7 @@ module sirv_qspi_physical(
       T_123 <= T_122;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       last_d <= 1'h0;
@@ -725,6 +747,7 @@ module sirv_qspi_physical(
       last_d <= T_123;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       scnt <= 8'h0;

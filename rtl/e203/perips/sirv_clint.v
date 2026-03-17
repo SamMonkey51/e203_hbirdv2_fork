@@ -1,3 +1,16 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_clint.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_clint_top.v
+//   - rtl/e203/subsys/e203_subsys_clint.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_clint_top.v
+//   - rtl/e203/subsys/e203_subsys_clint.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +30,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_clint，该模块实现当前文件中的一部分核心功能。
 module sirv_clint(
   input   clock,
   input   reset,
@@ -607,6 +621,7 @@ module sirv_clint(
   assign T_1889_data = 32'h0;
   assign T_1889_error = 1'h0;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       time_0 <= 32'h0;
@@ -615,6 +630,7 @@ module sirv_clint(
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       time_1 <= 32'h0;
@@ -630,6 +646,7 @@ module sirv_clint(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       timecmp_0_0 <= 32'hFFFF_FFFF;
@@ -640,6 +657,7 @@ module sirv_clint(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       timecmp_0_1 <= 32'hFFFF_FFFF;
@@ -650,6 +668,7 @@ module sirv_clint(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       ipi_0 <= 1'h0;

@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_qspi_fifo.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_qspi_fifo，该模块实现当前文件中的一部分核心功能。
 module sirv_qspi_fifo(
   input   clock,
   input   reset,
@@ -206,6 +218,7 @@ module sirv_qspi_fifo(
   assign T_143 = txq_io_count < io_ctrl_wm_tx;
   assign T_144 = rxq_io_count > io_ctrl_wm_rx;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       rxen <= 1'h0;
@@ -219,6 +232,7 @@ module sirv_qspi_fifo(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       cs_mode <= 2'h0;

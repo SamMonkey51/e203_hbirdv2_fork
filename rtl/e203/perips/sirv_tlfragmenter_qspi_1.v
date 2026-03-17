@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_tlfragmenter_qspi_1.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_flash_qspi_top.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_flash_qspi_top.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_tlfragmenter_qspi_1，该模块实现当前文件中的一部分核心功能。
 module sirv_tlfragmenter_qspi_1(
   input   clock,
   input   reset,
@@ -386,6 +398,7 @@ module sirv_tlfragmenter_qspi_1(
   assign T_1545 = T_1543 == 1'h0;
   assign T_1546 = repeater_io_full ? 1'h1 : io_in_0_a_bits_mask;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
     if (reset) begin
       acknum <= 5'h0;
@@ -400,6 +413,7 @@ module sirv_tlfragmenter_qspi_1(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
   if (reset) begin
         dOrig <= 3'b0;
@@ -413,6 +427,7 @@ module sirv_tlfragmenter_qspi_1(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
     if (reset) begin
       r_error <= 1'h0;
@@ -422,6 +437,7 @@ module sirv_tlfragmenter_qspi_1(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
     if (reset) begin
       gennum <= 5'h0;

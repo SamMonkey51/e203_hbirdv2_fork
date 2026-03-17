@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_plic_man.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_plic_top.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_plic_top.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -438,6 +449,7 @@ localparam PLIC_PEND_ARRAY = (((PLIC_IRQ_NUM-1)/32) + 1);
    reg [32-1:0] rsp_rdata_pend;
    reg [32-1:0] rsp_rdata_targ;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
    always @* begin:rdat_prio_mux//{ 
        rsp_rdata_prio = 32'b0;
 
@@ -446,6 +458,7 @@ localparam PLIC_PEND_ARRAY = (((PLIC_IRQ_NUM-1)/32) + 1);
        end//}
    end//}
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
    always @* begin:rdat_pend_mux//{ 
        rsp_rdata_pend = 32'b0;
 
@@ -464,6 +477,7 @@ localparam PLIC_PEND_ARRAY = (((PLIC_IRQ_NUM-1)/32) + 1);
        end//}
    end//}
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
    always @* begin:rdat_targ_mux//{ 
        rsp_rdata_targ = 32'b0;
 

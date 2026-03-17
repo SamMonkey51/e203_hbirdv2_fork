@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_LevelGateway.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_plic_man.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_plic_man.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -16,6 +27,7 @@
                                                                          
                                                                          
                                                                          
+// 模块说明：sirv_LevelGateway，该模块实现当前文件中的一部分核心功能。
 module sirv_LevelGateway(
   input   clock,
   input   reset,
@@ -38,6 +50,7 @@ module sirv_LevelGateway(
   assign T_16 = inFlight == 1'h0;
   assign T_17 = io_interrupt & T_16;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       inFlight <= 1'h0;

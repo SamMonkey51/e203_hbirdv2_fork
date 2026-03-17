@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：spi_master_clkgen.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_spi_master/spi_master_controller.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_spi_master/spi_master_controller.v
+// ================================================================
+
 // Copyright 2017 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -29,6 +40,7 @@ module spi_master_clkgen (
     reg       spi_clk_next;
     reg       running;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         spi_rise = 1'b0;
         spi_fall = 1'b0;
@@ -53,6 +65,7 @@ module spi_master_clkgen (
         end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge rstn) begin
         if (rstn == 1'b0) begin
             counter_trgt <= 'h0;

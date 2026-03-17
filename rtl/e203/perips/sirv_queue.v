@@ -1,3 +1,18 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_queue.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_aon.v
+//   - rtl/e203/perips/sirv_qspi_fifo.v
+//   - rtl/e203/perips/sirv_queue_1.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_aon.v
+//   - rtl/e203/perips/sirv_qspi_fifo.v
+//   - rtl/e203/perips/sirv_queue_1.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +32,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_queue，该模块实现当前文件中的一部分核心功能。
 module sirv_queue(
   input   clock,
   input   reset,
@@ -141,6 +157,7 @@ module sirv_queue(
   assign ptr_diff = T_90[0:0];
   assign T_92 = {maybe_full,ptr_diff};
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock) begin// The ram block does not need reset
     if(ram_read_T_69_en & ram_read_T_69_mask) begin
       ram_read[ram_read_T_69_addr] <= ram_read_T_69_data;
@@ -159,6 +176,7 @@ module sirv_queue(
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) begin
     if (reset) begin
       maybe_full <= 1'h0;

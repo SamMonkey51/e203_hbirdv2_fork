@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：i2c_master_bit_ctrl.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_i2c/i2c_master_byte_ctrl.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_i2c/i2c_master_byte_ctrl.v
+// ================================================================
+
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  WISHBONE rev.B2 compliant I2C Master bit-controller        ////
@@ -136,6 +147,7 @@
 
 `include "i2c_master_defines.v"
 
+// 模块说明：i2c_master_bit_ctrl，该模块实现当前文件中的一部分核心功能。
 module i2c_master_bit_ctrl
 (
     input             clk,      // system clock
@@ -249,6 +261,7 @@ module i2c_master_bit_ctrl
       else                   filter_cnt <= filter_cnt -1;
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge nReset)
       if (!nReset)
       begin
@@ -285,6 +298,7 @@ module i2c_master_bit_ctrl
     // detect stop condition => detect rising edge on SDA while SCL is high
     reg sta_condition;
     reg sto_condition;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge nReset)
       if (~nReset)
       begin
@@ -309,12 +323,14 @@ module i2c_master_bit_ctrl
     // 1) master drives SDA high, but the i2c bus is low
     // 2) stop detected while not requested
     reg cmd_stop;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge nReset)
       if (~nReset)
           cmd_stop <= 1'b0;
       else if (clk_en)
           cmd_stop <= cmd == `I2C_CMD_STOP;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge nReset)
       if (~nReset)
           al <= 1'b0;
@@ -349,6 +365,7 @@ module i2c_master_bit_ctrl
     parameter [17:0] wr_c    = 18'b0_1000_0000_0000_0000;
     parameter [17:0] wr_d    = 18'b1_0000_0000_0000_0000;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge nReset)
       if (!nReset)
       begin

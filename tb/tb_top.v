@@ -1,6 +1,18 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：tb_top.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - （当前未检索到其他文件直接实例化本文件中的模块）
+// ================================================================
+
+// ================================================================
+//   - （当前未检索到其他文件直接实例化该文件中的module）
+// ================================================================
+
 
 `include "e203_defines.v"
 
+// 模块说明：tb_top，该模块实现当前文件中的一部分核心功能。
 module tb_top();
 
   reg  clk;
@@ -29,6 +41,7 @@ module tb_top();
   reg [31:0] cycle_count;
   reg pc_write_to_host_flag;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge hfclk or negedge rst_n)
   begin 
     if(rst_n == 1'b0) begin
@@ -45,6 +58,7 @@ module tb_top();
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge hfclk or negedge rst_n)
   begin 
     if(rst_n == 1'b0) begin
@@ -58,6 +72,7 @@ module tb_top();
   wire i_valid = `EXU.i_valid;
   wire i_ready = `EXU.i_ready;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge hfclk or negedge rst_n)
   begin 
     if(rst_n == 1'b0) begin
@@ -227,11 +242,13 @@ module tb_top();
      $finish;
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always
   begin 
      #2 clk <= ~clk;
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always
   begin 
      #33 lfextclk <= ~lfextclk;

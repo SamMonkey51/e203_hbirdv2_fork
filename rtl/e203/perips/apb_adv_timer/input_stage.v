@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：input_stage.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright and related rights are licensed under the Solderpad Hardware
@@ -45,6 +56,7 @@ module input_stage #(
     assign s_fall        = r_oldval & ~s_int_sig;
     assign s_rise_ls_clk = ~r_ls_clk_sync[2] & r_ls_clk_sync[1];
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_ls_clk_sync
         if (~rstn_i)
             r_ls_clk_sync <= 'h0;
@@ -53,6 +65,7 @@ module input_stage #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_mode
         if (~rstn_i) begin
             r_mode <= 0;
@@ -64,6 +77,7 @@ module input_stage #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_event_o
         if (cfg_sel_clk_i)
             event_o = s_int_evnt & s_rise_ls_clk;
@@ -72,6 +86,7 @@ module input_stage #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_s_int_evnt
         case (r_mode)
             3'b000: s_int_evnt = 1'b1;
@@ -98,6 +113,7 @@ module input_stage #(
     end
 
     integer i;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_int_sig
         s_int_sig = 0;
 	for (i = 0; i < EXTSIG_NUM; i = i + 1) begin
@@ -106,6 +122,7 @@ module input_stage #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_event
         if (~rstn_i) begin
             r_event <= 1'b0;
@@ -124,6 +141,7 @@ module input_stage #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_sync
 	if (~rstn_i) begin
             r_oldval <= 0;

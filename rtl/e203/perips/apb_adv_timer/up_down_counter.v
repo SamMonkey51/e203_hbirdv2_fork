@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：up_down_counter.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -61,6 +72,7 @@ module up_down_counter #(
 
     assign s_is_update   = r_sawtooth ? (r_counter == r_end) : (r_direction && (r_counter == (r_start - 1)));
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_event
         if (~rstn_i) begin
             r_event          <= 0;
@@ -73,6 +85,7 @@ module up_down_counter #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_s_do_update
         s_pending_update = r_pending_update;
         s_do_update      = 0;
@@ -95,6 +108,7 @@ module up_down_counter #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_s_counter
         s_counter   = r_counter;
         s_start     = r_start;
@@ -129,6 +143,7 @@ module up_down_counter #(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_counter
         if (~rstn_i) begin
             r_counter   <= 0;

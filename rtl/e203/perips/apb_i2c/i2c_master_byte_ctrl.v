@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：i2c_master_byte_ctrl.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_i2c/apb_i2c.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_i2c/apb_i2c.v
+// ================================================================
+
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  WISHBONE rev.B2 compliant I2C Master byte-controller       ////
@@ -68,6 +79,7 @@
 
 `include "i2c_master_defines.v"
 
+// 模块说明：i2c_master_byte_ctrl，该模块实现当前文件中的一部分核心功能。
 module i2c_master_byte_ctrl (
 	clk, nReset, ena, clk_cnt, start, stop, read, write, ack_in, din,
 	cmd_ack, ack_out, dout, i2c_busy, i2c_al, scl_i, scl_o, scl_oen, sda_i, sda_o, sda_oen );
@@ -188,6 +200,7 @@ module i2c_master_byte_ctrl (
 	//
 	reg [4:0] c_state; 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 	always @(posedge clk or negedge nReset)
 	  if (!nReset)
 	    begin

@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：uart_rx.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_uart/apb_uart.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_uart/apb_uart.v
+// ================================================================
+
 // Copyright 2017 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -60,6 +71,7 @@ module uart_rx (
 
     assign busy_o = (CS != IDLE);
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         case (cfg_bits_i)
             2'b00: s_target_bits = 3'h4;
@@ -70,6 +82,7 @@ module uart_rx (
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         NS = CS;
         sampleData = 1'b0;
@@ -149,6 +162,7 @@ module uart_rx (
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin
         if (rstn_i == 1'b0) begin
             CS            <= IDLE;
@@ -172,6 +186,7 @@ module uart_rx (
 
     assign s_rx_fall = ~reg_rx_sync[1] & reg_rx_sync[2];
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin
         if (rstn_i == 1'b0)
             reg_rx_sync <= 3'b111;
@@ -181,6 +196,7 @@ module uart_rx (
             reg_rx_sync <= 3'b111;
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin
         if (rstn_i == 1'b0) begin
             baud_cnt <= 'h0;
@@ -203,6 +219,7 @@ module uart_rx (
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i)
         if (rstn_i == 1'b0)
             err_o <= 1'b0;

@@ -1,3 +1,30 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_gnrl_icbs.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/core/e203_biu.v
+//   - rtl/e203/core/e203_dtcm_ctrl.v
+//   - rtl/e203/core/e203_itcm_ctrl.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/fab/sirv_icb1to16_bus.v
+//   - rtl/e203/fab/sirv_icb1to2_bus.v
+//   - rtl/e203/fab/sirv_icb1to8_bus.v
+//   - rtl/e203/subsys/e203_subsys_mems.v
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/core/e203_biu.v
+//   - rtl/e203/core/e203_dtcm_ctrl.v
+//   - rtl/e203/core/e203_itcm_ctrl.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/fab/sirv_icb1to16_bus.v
+//   - rtl/e203/fab/sirv_icb1to2_bus.v
+//   - rtl/e203/fab/sirv_icb1to8_bus.v
+//   - rtl/e203/subsys/e203_subsys_mems.v
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -223,6 +250,7 @@ generate //{
     end//}
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @ (*) begin : sel_o_apb_cmd_ready_PROC
       sel_o_icb_cmd_read  = {1   {1'b0}};
       sel_o_icb_cmd_addr  = {AW  {1'b0}};
@@ -249,6 +277,7 @@ generate //{
     end
     assign o_icb_cmd_valid_real = |i_bus_icb_cmd_valid; 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @ (*) begin : i_arbt_indic_id_PROC
       i_arbt_indic_id = {ARBT_PTR_W{1'b0}};
       for(j = 0; j < ARBT_NUM; j = j+1) begin//{
@@ -833,11 +862,13 @@ generate //{
     end
     
     if(SPLT_PTR_1HOT == 1) begin:ptr_1hot// {
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
        always @ (*) begin : i_splt_indic_id_PROC
          i_splt_indic_id = i_icb_splt_indic;
        end
     end
     else begin:ptr_not_1hot//}{
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
        always @ (*) begin : i_splt_indic_id_PROC
          i_splt_indic_id = {SPLT_PTR_W{1'b0}};
          for(j = 0; j < SPLT_NUM; j = j+1) begin//{
@@ -957,6 +988,7 @@ generate //{
         reg [DW-1:0] sel_i_icb_rsp_rdata; 
         reg [USR_W-1:0] sel_i_icb_rsp_usr; 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
         always @ (*) begin : sel_icb_rsp_PROC
           sel_i_icb_rsp_err   = 1'b0;
           sel_i_icb_rsp_excl_ok   = 1'b0;

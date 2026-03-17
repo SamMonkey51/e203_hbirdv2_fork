@@ -1,3 +1,40 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_gnrl_bufs.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/core/e203_exu_nice.v
+//   - rtl/e203/core/e203_ifu_ift2icb.v
+//   - rtl/e203/core/e203_irq_sync.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/debug/sirv_jtag_dtm.v
+//   - rtl/e203/general/sirv_1cyc_sram_ctrl.v
+//   - rtl/e203/general/sirv_gnrl_icbs.v
+//   - rtl/e203/general/sirv_sram_icb_ctrl.v
+//   - rtl/e203/perips/sirv_aon_top.v
+//   - rtl/e203/perips/sirv_plic_man.v
+//   - rtl/e203/subsys/e203_subsys_clint.v
+//   - rtl/e203/subsys/e203_subsys_perips.v
+//   - rtl/e203/subsys/e203_subsys_plic.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/core/e203_exu_nice.v
+//   - rtl/e203/core/e203_ifu_ift2icb.v
+//   - rtl/e203/core/e203_irq_sync.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/debug/sirv_jtag_dtm.v
+//   - rtl/e203/general/sirv_1cyc_sram_ctrl.v
+//   - rtl/e203/general/sirv_gnrl_icbs.v
+//   - rtl/e203/general/sirv_sram_icb_ctrl.v
+//   - rtl/e203/perips/sirv_aon_top.v
+//   - rtl/e203/perips/sirv_plic_man.v
+//   - rtl/e203/subsys/e203_subsys_clint.v
+//   - rtl/e203/subsys/e203_subsys_perips.v
+//   - rtl/e203/subsys/e203_subsys_plic.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -496,6 +533,7 @@ generate //{
     /////////One-Hot Mux as the read path
     integer j;
     reg [DW-1:0] mux_rdat;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @*
     begin : rd_port_PROC//{
       mux_rdat = {DW{1'b0}};

@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_qspi_media.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_qspi_media，该模块实现当前文件中的一部分核心功能。
 module sirv_qspi_media(
   input   clock,
   input   reset,
@@ -317,6 +329,7 @@ module sirv_qspi_media(
   assign GEN_46 = T_202 ? GEN_40 : GEN_34;
   assign GEN_47 = T_202 ? GEN_41 : GEN_39;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
   if(reset) begin
     cs_id     <= 2'b0;
@@ -369,6 +382,7 @@ module sirv_qspi_media(
 
   end//}
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       clear <= 1'h0;
@@ -380,6 +394,7 @@ module sirv_qspi_media(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       cs_assert <= 1'h0;
@@ -397,6 +412,7 @@ module sirv_qspi_media(
       end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       state <= 2'h0;

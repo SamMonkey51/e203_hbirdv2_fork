@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_tlwidthwidget_qspi.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_flash_qspi_top.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_flash_qspi_top.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_tlwidthwidget_qspi，该模块实现当前文件中的一部分核心功能。
 module sirv_tlwidthwidget_qspi(
   input   clock,
   input   reset,
@@ -428,6 +440,7 @@ module sirv_tlwidthwidget_qspi(
   assign GEN_10 = 3'h4 == io_out_0_d_bits_size ? T_1570_4 : GEN_9;
   assign GEN_11 = 3'h5 == io_out_0_d_bits_size ? T_1570_5 : GEN_10;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
     if (reset) begin
       T_1447 <= 4'hf;
@@ -436,6 +449,7 @@ module sirv_tlwidthwidget_qspi(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
   if (reset) begin
       T_1512 <= 24'b0;
@@ -451,6 +465,7 @@ module sirv_tlwidthwidget_qspi(
   end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset) 
     if (reset) begin
       T_1527 <= 2'h0;

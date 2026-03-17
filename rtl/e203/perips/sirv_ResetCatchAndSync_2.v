@@ -1,3 +1,16 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_ResetCatchAndSync_2.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/subsys/e203_subsys_main.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/subsys/e203_subsys_main.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -16,6 +29,7 @@
                                                                          
                                                                          
                                                                          
+// 模块说明：sirv_ResetCatchAndSync_2，该模块实现当前文件中的一部分核心功能。
 module sirv_ResetCatchAndSync_2(
   input   clock,
   input   reset,

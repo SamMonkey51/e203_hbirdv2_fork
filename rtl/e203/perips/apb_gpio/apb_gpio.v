@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：apb_gpio.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
 // Copyright 2017 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -28,6 +39,7 @@
 `define REG_PADCFG6     4'b1110 //BASEADDR+0x38
 `define REG_PADCFG7     4'b1111 //BASEADDR+0x3C
 
+// 模块说明：apb_gpio，该模块实现当前文件中的一部分核心功能。
 module apb_gpio
 #(
     parameter APB_ADDR_WIDTH = 12  //APB slaves are 4KB by default
@@ -91,6 +103,7 @@ module apb_gpio
     assign s_rise_int    = |s_is_int_all;
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge HCLK or negedge HRESETn) begin
         if (~HRESETn) begin
             interrupt <= 1'b0;
@@ -104,6 +117,7 @@ module apb_gpio
         end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge HCLK or negedge HRESETn) begin
         if (~HRESETn) begin
             r_gpio_sync0 <= 'h0;
@@ -117,6 +131,7 @@ module apb_gpio
     end
 
     integer i;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge HCLK or negedge HRESETn) begin
         if (~HRESETn) begin
             r_gpio_inten    <= 'b0;
@@ -189,6 +204,7 @@ module apb_gpio
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         case (s_apb_addr)
             `REG_PADDIR:    PRDATA = r_gpio_dir;

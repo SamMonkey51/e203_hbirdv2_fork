@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：adv_timer_apb_if.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_adv_timer/apb_adv_timer.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_adv_timer/apb_adv_timer.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright and related rights are licensed under the Solderpad Hardware
@@ -100,6 +111,7 @@
 `define REG_EVENT_CFG          8'b01000000 //BASEADDR+0x100
 `define REG_CH_EN              8'b01000001 //BASEADDR+0x104
 
+// 模块说明：adv_timer_apb_if，该模块实现当前文件中的一部分核心功能。
 module adv_timer_apb_if #(
 	parameter APB_ADDR_WIDTH = 12
 ) (
@@ -500,6 +512,7 @@ module adv_timer_apb_if #(
 
     assign s_apb_addr        = PADDR[9:2];
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge HCLK or negedge HRESETn) begin
         if (~HRESETn) begin
             r_timer0_th       <=  'h0;
@@ -893,6 +906,7 @@ module adv_timer_apb_if #(
         end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         case (s_apb_addr)
             `REG_TIM0_TH:

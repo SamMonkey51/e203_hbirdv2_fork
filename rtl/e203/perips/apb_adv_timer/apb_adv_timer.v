@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：apb_adv_timer.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/subsys/e203_subsys_perips.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -589,6 +600,7 @@ module apb_adv_timer #(
     assign events_o[2] = (s_event_en[2] & r_event_sync_2[1]) & ~r_event_sync_2[0];
     assign events_o[3] = (s_event_en[3] & r_event_sync_3[1]) & ~r_event_sync_3[0];
     
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge HCLK or negedge HRESETn) begin : proc_edgedet
         if (~HRESETn) begin
             r_event_sync_0 <= 0;

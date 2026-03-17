@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：io_generic_fifo.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_uart/apb_uart.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_uart/apb_uart.v
+// ================================================================
+
 // Copyright 2017 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -40,6 +51,7 @@ module io_generic_fifo
     assign full       = (elements == BUFFER_DEPTH);
     assign elements_o = elements;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : elements_sequential
         if (rstn_i == 1'b0)
             elements <= 0;
@@ -58,6 +70,7 @@ module io_generic_fifo
     end
 
     integer loop1;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : buffers_sequential
         if (rstn_i == 1'b0) begin
             for (loop1 = 0; loop1 < BUFFER_DEPTH; loop1 = loop1 + 1) begin
@@ -68,6 +81,7 @@ module io_generic_fifo
         end
     end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : sequential
         if (rstn_i == 1'b0) begin
             pointer_out <= 0;

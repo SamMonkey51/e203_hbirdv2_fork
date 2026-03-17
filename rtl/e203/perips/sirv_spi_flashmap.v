@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_spi_flashmap.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_flash_qspi.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_qspi_flashmap，该模块实现当前文件中的一部分核心功能。
 module sirv_qspi_flashmap(
   input   clock,
   input   reset,
@@ -254,6 +266,7 @@ module sirv_qspi_flashmap(
   assign GEN_44 = T_185 ? io_link_rx_valid : GEN_22;
   assign GEN_45 = T_185 ? GEN_42 : GEN_41;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
   if (reset) begin
      cnt <= 4'b0;
@@ -278,6 +291,7 @@ module sirv_qspi_flashmap(
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       state <= 3'h0;

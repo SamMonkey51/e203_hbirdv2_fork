@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：timer_cntrl.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_adv_timer/timer_module.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -38,6 +49,7 @@ module timer_cntrl (
     assign status_o      = {6'h00, r_pending};
     assign ctrl_active_o = r_active;
     
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin : proc_sm
         if (cfg_start_i && !r_active) begin
             ctrl_rst_o     = 1'b1;
@@ -51,6 +63,7 @@ module timer_cntrl (
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk_i or negedge rstn_i) begin : proc_r_active
         if (~rstn_i) begin
             r_active  <= 0;

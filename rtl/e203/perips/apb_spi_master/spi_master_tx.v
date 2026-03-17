@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：spi_master_tx.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_spi_master/spi_master_controller.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_spi_master/spi_master_controller.v
+// ================================================================
+
 // Copyright 2017 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
@@ -52,6 +63,7 @@ module spi_master_tx (
     assign tx_done  = done;
     assign reg_done = (!en_quad_in && (counter[4:0] == 5'b11111)) || (en_quad_in && (counter[2:0] == 3'b111));
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         if (counter_in_upd)
             counter_trgt_next = (en_quad_in ? {2'b00, counter_in[15:2]} : counter_in);
@@ -61,6 +73,7 @@ module spi_master_tx (
     
     assign done = (counter == (counter_trgt - 1)) && tx_edge;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(*) begin
         tx_NS         = tx_CS;
         clk_en_o      = 1'b0;
@@ -111,6 +124,7 @@ module spi_master_tx (
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
             counter      <= 0;

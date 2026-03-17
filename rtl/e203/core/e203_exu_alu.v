@@ -1,3 +1,26 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：e203_exu_alu.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/core/e203_exu.v
+//   - rtl/e203/core/e203_exu_alu_bjp.v
+//   - rtl/e203/core/e203_exu_alu_csrctrl.v
+//   - rtl/e203/core/e203_exu_alu_dpath.v
+//   - rtl/e203/core/e203_exu_alu_lsuagu.v
+//   - rtl/e203/core/e203_exu_alu_muldiv.v
+//   - rtl/e203/core/e203_exu_alu_rglr.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/core/e203_exu.v
+//   - rtl/e203/core/e203_exu_alu_bjp.v
+//   - rtl/e203/core/e203_exu_alu_csrctrl.v
+//   - rtl/e203/core/e203_exu_alu_dpath.v
+//   - rtl/e203/core/e203_exu_alu_lsuagu.v
+//   - rtl/e203/core/e203_exu_alu_muldiv.v
+//   - rtl/e203/core/e203_exu_alu_rglr.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -29,6 +52,7 @@
 // ====================================================================
 `include "e203_defines.v"
 
+// 模块说明：e203_exu_alu，该模块实现当前文件中的一部分核心功能。
 module e203_exu_alu(
 
   //////////////////////////////////////////////////////////////

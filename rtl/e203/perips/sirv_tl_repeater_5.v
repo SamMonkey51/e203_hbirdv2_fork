@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_tl_repeater_5.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_tlwidthwidget_qspi.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_tlwidthwidget_qspi.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +28,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_tl_repeater_5，该模块实现当前文件中的一部分核心功能。
 module sirv_tl_repeater_5(
   input   clock,
   input   reset,
@@ -116,6 +128,7 @@ module sirv_tl_repeater_5(
   assign T_95 = T_92 & T_94;
   assign GEN_8 = T_95 ? 1'h0 : GEN_0;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
     if (reset) begin
       full <= 1'h0;
@@ -130,6 +143,7 @@ module sirv_tl_repeater_5(
     end
 
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge reset)
   if (reset) begin
     saved_opcode  <= 3'b0;

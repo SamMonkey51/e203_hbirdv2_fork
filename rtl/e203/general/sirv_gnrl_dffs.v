@@ -1,3 +1,62 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_gnrl_dffs.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/core/e203_clk_ctrl.v
+//   - rtl/e203/core/e203_exu_alu_dpath.v
+//   - rtl/e203/core/e203_exu_alu_lsuagu.v
+//   - rtl/e203/core/e203_exu_alu_muldiv.v
+//   - rtl/e203/core/e203_exu_csr.v
+//   - rtl/e203/core/e203_exu_excp.v
+//   - rtl/e203/core/e203_exu_oitf.v
+//   - rtl/e203/core/e203_exu_regfile.v
+//   - rtl/e203/core/e203_ifu_ifetch.v
+//   - rtl/e203/core/e203_ifu_ift2icb.v
+//   - rtl/e203/core/e203_ifu_litebpu.v
+//   - rtl/e203/core/e203_itcm_ctrl.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/debug/sirv_debug_csr.v
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/debug/sirv_debug_ram.v
+//   - rtl/e203/general/sirv_gnrl_bufs.v
+//   - rtl/e203/general/sirv_gnrl_icbs.v
+//   - rtl/e203/perips/sirv_aon_lclkgen_regs.v
+//   - rtl/e203/perips/sirv_aon_wrapper.v
+//   - rtl/e203/perips/sirv_clint_top.v
+//   - rtl/e203/perips/sirv_hclkgen_regs.v
+//   - rtl/e203/perips/sirv_plic_man.v
+//   - rtl/e203/subsys/e203_subsys_nice_core.v
+//   - rtl/e203/subsys/e203_subsys_pllclkdiv.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/core/e203_clk_ctrl.v
+//   - rtl/e203/core/e203_exu_alu_dpath.v
+//   - rtl/e203/core/e203_exu_alu_lsuagu.v
+//   - rtl/e203/core/e203_exu_alu_muldiv.v
+//   - rtl/e203/core/e203_exu_csr.v
+//   - rtl/e203/core/e203_exu_excp.v
+//   - rtl/e203/core/e203_exu_oitf.v
+//   - rtl/e203/core/e203_exu_regfile.v
+//   - rtl/e203/core/e203_ifu_ifetch.v
+//   - rtl/e203/core/e203_ifu_ift2icb.v
+//   - rtl/e203/core/e203_ifu_litebpu.v
+//   - rtl/e203/core/e203_itcm_ctrl.v
+//   - rtl/e203/core/e203_lsu_ctrl.v
+//   - rtl/e203/debug/sirv_debug_csr.v
+//   - rtl/e203/debug/sirv_debug_module.v
+//   - rtl/e203/debug/sirv_debug_ram.v
+//   - rtl/e203/general/sirv_gnrl_bufs.v
+//   - rtl/e203/general/sirv_gnrl_icbs.v
+//   - rtl/e203/perips/sirv_aon_lclkgen_regs.v
+//   - rtl/e203/perips/sirv_aon_wrapper.v
+//   - rtl/e203/perips/sirv_clint_top.v
+//   - rtl/e203/perips/sirv_hclkgen_regs.v
+//   - rtl/e203/perips/sirv_plic_man.v
+//   - rtl/e203/subsys/e203_subsys_nice_core.v
+//   - rtl/e203/subsys/e203_subsys_pllclkdiv.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -51,6 +110,7 @@ module sirv_gnrl_dfflrs # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @(posedge clk or negedge rst_n)
 begin : DFFLRS_PROC
   if (rst_n == 1'b0)
@@ -98,6 +158,7 @@ module sirv_gnrl_dfflr # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @(posedge clk or negedge rst_n)
 begin : DFFLR_PROC
   if (rst_n == 1'b0)
@@ -143,6 +204,7 @@ module sirv_gnrl_dffl # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @(posedge clk)
 begin : DFFL_PROC
   if (lden == 1'b1)
@@ -187,6 +249,7 @@ module sirv_gnrl_dffrs # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @(posedge clk or negedge rst_n)
 begin : DFFRS_PROC
   if (rst_n == 1'b0)
@@ -219,6 +282,7 @@ module sirv_gnrl_dffr # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @(posedge clk or negedge rst_n)
 begin : DFFR_PROC
   if (rst_n == 1'b0)
@@ -249,6 +313,7 @@ module sirv_gnrl_ltch # (
 
 reg [DW-1:0] qout_r;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
 always @ * 
 begin : LTCH_PROC
   if (lden == 1'b1)

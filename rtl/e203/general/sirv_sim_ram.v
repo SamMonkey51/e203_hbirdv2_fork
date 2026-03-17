@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_sim_ram.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/general/sirv_gnrl_ram.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/general/sirv_gnrl_ram.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -53,6 +64,7 @@ module sirv_sim_ram
 
     genvar i;
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
     always @(posedge clk)
     begin
         if (ren) begin
@@ -63,6 +75,7 @@ module sirv_sim_ram
     generate
       for (i = 0; i < MW; i = i+1) begin :mem
         if((8*i+8) > DW ) begin: last
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
           always @(posedge clk) begin
             if (wen[i]) begin
                mem_r[addr][DW-1:8*i] <= din[DW-1:8*i];
@@ -70,6 +83,7 @@ module sirv_sim_ram
           end
         end
         else begin: non_last
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
           always @(posedge clk) begin
             if (wen[i]) begin
                mem_r[addr][8*i+7:8*i] <= din[8*i+7:8*i];

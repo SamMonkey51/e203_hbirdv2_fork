@@ -1,3 +1,16 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：sirv_pmu.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/sirv_aon.v
+//   - rtl/e203/perips/sirv_pmu_core.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/sirv_aon.v
+//   - rtl/e203/perips/sirv_pmu_core.v
+// ================================================================
+
  /*                                                                      
  Copyright 2018-2020 Nuclei System Technology, Inc.                
                                                                          
@@ -17,6 +30,7 @@
                                                                          
                                                                          
 
+// 模块说明：sirv_pmu，该模块实现当前文件中的一部分核心功能。
 module sirv_pmu(
   input   clock,
   input   reset,
@@ -314,6 +328,7 @@ module sirv_pmu(
   //   is there to clear it
   reg por_reset_r;
   reg por_reset_r_r;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge por_reset) begin
     if(por_reset) begin
       por_reset_r   <= 1'b1;
@@ -327,6 +342,7 @@ module sirv_pmu(
 
   reg erst_reset_r;
   reg erst_reset_r_r;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge erst_reset) begin
     if(erst_reset) begin
       erst_reset_r   <= 1'b1;
@@ -340,6 +356,7 @@ module sirv_pmu(
 
   reg wdog_reset_r;
   reg wdog_reset_r_r;
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock or posedge wdog_reset) begin
     if(wdog_reset) begin
       wdog_reset_r   <= 1'b1;
@@ -390,12 +407,14 @@ module sirv_pmu(
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock) begin
     if(rstcause_erst_ena) begin
       rstcause_erst_r <= rstcause_erst_nxt;
     end
   end
 
+// 逻辑块说明：always 块，用于在触发条件满足时更新寄存器或计算组合输出。
   always @(posedge clock) begin
     if(rstcause_wdog_ena) begin
       rstcause_wdog_r <= rstcause_wdog_nxt;

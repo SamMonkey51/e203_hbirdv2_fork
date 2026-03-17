@@ -1,3 +1,14 @@
+// ================================================================
+// [阅读导航-自动生成] 文件：timer_module.v
+// 说明：下面列出可能引用/实例化本文件模块的上层文件，便于从系统入口反向追踪。
+// 引用该文件的可能位置：
+//   - rtl/e203/perips/apb_adv_timer/apb_adv_timer.v
+// ================================================================
+
+// ================================================================
+//   - rtl/e203/perips/apb_adv_timer/apb_adv_timer.v
+// ================================================================
+
 // Copyright 2018 ETH Zurich and University of Bologna.
 // -- Adaptable modifications made for hbirdv2 SoC. -- 
 // Copyright 2020 Nuclei System Technology, Inc.
